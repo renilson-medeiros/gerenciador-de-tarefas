@@ -29,7 +29,7 @@ function AddTask({ onTaskAdded }) {
                         setDescription("");
                     }
                 }}
-                className='bg-zinc-950 hover:bg-zinc-900 cursor-pointer transition-colors duration-300 text-white w-full p-2 rounded'>
+                className='bg-zinc-950 font-medium hover:bg-purple-800 cursor-pointer transition-colors duration-300 text-white w-full p-2 rounded'>
                 Adicionar Tarefa
             </button>
         </div>
