@@ -11,10 +11,6 @@ function Tasks({ tasks, onTaskCompleted, onTaskDeleted }) {
         query.set('description', tasks.find(task => task.id === taskId).description);
         navigate(`/tasks?${query.toString()}`);
     }
-    
-    function onTaskCompleted(taskId) {
-        onTaskCompleted(taskId);
-    }
 
     return (
         <div className="w-full py-6">
@@ -25,10 +21,11 @@ function Tasks({ tasks, onTaskCompleted, onTaskDeleted }) {
                     <h2 className="text-white text-xs uppercase font-semibold leading-6 border-b border-zinc-900">Tarefas</h2>
                     {tasks.map((task, index) => (
                         <div className="flex gap-2 justify-between items-center" key={task.id}>
+                            
                             <button
                                 key={task.id}
                                 onClick={() => onTaskCompleted(task.id)}
-                                className={`p-3 text-zinc-50 text-left rounded w-full cursor-pointer transition ${
+                                className={`p-3 text-zinc-50 text-left rounded w-full cursor-pointer transition truncate  ${
                                     index % 2 === 0 ? 'bg-zinc-800 hover:bg-purple-800' : 'bg-zinc-900 hover:text-zinc-400'
                                 }`
                                 + (task.completed ? ' line-through text-gray-500 opacity-50' : ' text-gray-800')}
@@ -53,6 +50,7 @@ function Tasks({ tasks, onTaskCompleted, onTaskDeleted }) {
                                 + (task.completed ? ' text-gray-500 opacity-50' : ' opacity-100')}>
                                     <Trash size={16} />
                             </button>
+                            
                         </div>
                     ))}
                 </ul>
