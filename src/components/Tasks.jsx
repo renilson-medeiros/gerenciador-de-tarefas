@@ -1,6 +1,20 @@
 import { Trash, Eye } from "lucide-react"
+import { useNavigate } from "react-router-dom";
 
 function Tasks({ tasks, onTaskCompleted, onTaskDeleted }) {
+    const navigate = useNavigate();
+
+    function onTaskDescription(taskId) {
+        const query = new URLSearchParams();
+        query.set('id', taskId);
+        query.set('title', tasks.find(task => task.id === taskId).title);
+        query.set('description', tasks.find(task => task.id === taskId).description);
+        navigate(`/tasks?${query.toString()}`);
+    }
+    
+    function onTaskCompleted(taskId) {
+        onTaskCompleted(taskId);
+    }
 
     return (
         <div className="w-full py-6">
@@ -15,7 +29,7 @@ function Tasks({ tasks, onTaskCompleted, onTaskDeleted }) {
                                 key={task.id}
                                 onClick={() => onTaskCompleted(task.id)}
                                 className={`p-3 text-zinc-50 text-left rounded w-full cursor-pointer transition ${
-                                    index % 2 === 0 ? 'bg-zinc-800 hover:bg-zinc-700' : 'bg-zinc-900 hover:text-zinc-400'
+                                    index % 2 === 0 ? 'bg-zinc-800 hover:bg-purple-800' : 'bg-zinc-900 hover:text-zinc-400'
                                 }`
                                 + (task.completed ? ' line-through text-gray-500 opacity-50' : ' text-gray-800')}
                             >
@@ -24,8 +38,9 @@ function Tasks({ tasks, onTaskCompleted, onTaskDeleted }) {
 
                             <button 
                                 disabled={task.completed}
+                                onClick={() => onTaskDescription(task.id)}
                                 className={`p-4 text-zinc-50 rounded cursor-pointer transition ${
-                                    index % 2 === 0 ? 'bg-zinc-800 hover:bg-zinc-700' : 'bg-zinc-900 hover:text-zinc-400'
+                                    index % 2 === 0 ? 'bg-zinc-800 hover:bg-purple-800' : 'bg-zinc-900 hover:text-zinc-400'
                                 }` 
                                 + (task.completed ? ' text-gray-500 opacity-50' : ' text-gray-800')}>
                                     <Eye size={16} />

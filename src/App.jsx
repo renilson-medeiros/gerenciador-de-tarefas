@@ -1,11 +1,18 @@
 import './App.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Tasks from './components/Tasks'
 import AddTask from './components/AddTask'
 
 function App() {
 
-  const [tasks, setTasks] = useState([])
+  const [tasks, setTasks] = useState(
+    JSON.parse(localStorage.getItem('tasks')) || []
+  )
+
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks))
+  }
+  , [tasks])
 
   function onTaskCompleted(TaskId) {
     const updatedTasks = tasks.map(task => {
@@ -37,7 +44,7 @@ function App() {
   }
 
   return (
-      <div className='h-screen justify-center p-6 max-w-2xl mx-auto'>
+      <div className='h-screen justify-center p-6 max-w-2xl mx-auto text-white'>
         <header className='w-full p-4 flex justify-center items-center mb-6'>
           <h1 className='text-3xl text-white uppercase font-semibold'>Gerenciador de Tarefas</h1>
         </header>
