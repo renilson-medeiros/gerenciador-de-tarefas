@@ -20,9 +20,15 @@ function TaskPage() {
 
         <h1 className="flex-1 text-white text-xs text-center uppercase font-semibold leading-6 ">Detalhes da tarefa</h1>
       </div>
-      <div className="mt-2 space-y-2">
-        <h1 className="text-lg font-semibold">{title}</h1>
-        <p className="text-zinc-400">{description}</p>
+      <div className="mt-2 space-y-4">
+        <div>
+          <span className="text-xs uppercase font-bold tracking-wide text-zinc-500">Título:</span>
+          <h1 className="text-2xl font-semibold">{title}</h1>
+        </div>
+        <div>
+          <span className="text-xs uppercase font-bold tracking-wide text-zinc-500">Descrição:</span>
+          <p className="text-sm text-zinc-200">{description}</p>
+        </div>
       </div>
     </div>
   );
