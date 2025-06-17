@@ -46,7 +46,7 @@ function App() {
   return (
       <div className='h-screen justify-center p-6 max-w-2xl mx-auto text-white'>
         <header className='w-full p-4 flex justify-center items-center mb-6'>
-          <h1 className='text-3xl text-white uppercase font-semibold'>Gerenciador de Tarefas</h1>
+          <h1 className='text-3xl text-slate-900 font-bold'>Gerenciador de Tarefas</h1>
         </header>
 
         <main>
