@@ -101,7 +101,7 @@ A configuração do Tailwind está em [`tailwind.config.js`](tailwind.config.js)
 - Renderização Condicional: lógica para exibir diferentes partes da interface com base no estado da aplicação.
 - Persistência Local: integração com localStorage para salvar dados no navegador.
 - Rotas: utilização do React Router DOM para navegação entre páginas.
-=======
+- 
 ---
 
 Projeto desenvolvido para fins de estudo e demonstração de React + Vite
