@@ -108,6 +108,11 @@ A configuração do Tailwind está em [`tailwind.config.js`](tailwind.config.js)
 - IDs das tarefas são incrementais; para produção, recomenda-se usar UUIDs.
 - O projeto já está pronto para deploy estático (ex: Vercel, Netlify).
 
----
+## O que aprendi
 
-Projeto desenvolvido para fins de estudo e demonstração de React + Vite
+- Gerenciamento de Estado: utilização do hook useState para controlar os dados da aplicação de forma reativa.
+- Componentização: criação e reutilização de componentes para a UI, como AddTask e Input.
+- Props: passagem de dados e funções entre componentes (pai → filho).
+- Renderização Condicional: lógica para exibir diferentes partes da interface com base no estado da aplicação.
+- Persistência Local: integração com localStorage para salvar dados no navegador.
+- Rotas: utilização do React Router DOM para navegação entre páginas.
