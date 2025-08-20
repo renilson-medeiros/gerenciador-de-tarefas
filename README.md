@@ -50,7 +50,7 @@ index.html
 ### 2. Clonando o repositório
 
 ```sh
-git clone <URL-DO-REPOSITORIO>
+git clone git@github.com:renilson-medeiros/gerenciador-de-tarefas.git
 cd to-do
 ```
 
@@ -68,26 +68,11 @@ npm run dev
 
 Acesse [http://localhost:5173](http://localhost:5173) no navegador.
 
-### 5. Build para produção
-
-```sh
-npm run build
-```
-
-### 6. Visualizar build de produção localmente
-
-```sh
-npm run preview
-```
-
 ## Scripts disponíveis
 
 Veja todos os scripts em [`package.json`](package.json):
 
 - `npm run dev` — inicia o servidor de desenvolvimento
-- `npm run build` — gera build de produção
-- `npm run preview` — serve build de produção localmente
-- `npm run lint` — executa o linter
 
 ## Principais arquivos e componentes
 
